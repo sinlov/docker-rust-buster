@@ -1,0 +1,28 @@
+{
+  "name": "docker-rust-buster",
+  "version": "1.3.1",
+  "description": "for fnndsc/python-poetry append make and gcc",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sinlov/docker-rust-buster.git"
+  },
+  "keywords": [
+    "go",
+    "make",
+    "docker",
+    "action"
+  ],
+  "author": "sinlov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sinlov/docker-rust-buster/issues"
+  },
+  "homepage": "https://github.com/sinlov/docker-rust-buster#readme"
+}
