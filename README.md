@@ -10,7 +10,7 @@
 ## for
 
 - rust build in docker with buster
-- [![](https://img.shields.io/docker/v/_/rust/buster?label=rust&logo=rust&style=social)](https://hub.docker.com/_/rust/tags) latest semver version with `buster`
+- [![](https://img.shields.io/docker/v/_/rust/buster?label=rust&logo=rust&style=social)](https://hub.docker.com/_/rust/tags?page=1&name=buster) latest semver version with `buster`
 - install component
   - [rustfmt](https://github.com/rust-lang/rustfmt)
   - [clippy](https://doc.rust-lang.org/clippy/)
@@ -29,5 +29,5 @@ docker run --rm \
   --entrypoint poetry \
   --name "test-docker-rust-buster" \
   sinlov/docker-rust-buster:latest \
-  --help
+  rustc --version
 ```

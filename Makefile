@@ -8,7 +8,7 @@ ROOT_NAME=docker-rust-buster
 
 # MakeDocker.mk settings start
 ROOT_OWNER=sinlov
-ROOT_PARENT_SWITCH_TAG := 1.67.1-buster
+ROOT_PARENT_SWITCH_TAG := 1.68.0-buster
 # for image local build
 INFO_TEST_BUILD_DOCKER_PARENT_IMAGE=rust
 INFO_BUILD_DOCKER_FILE=Dockerfile
