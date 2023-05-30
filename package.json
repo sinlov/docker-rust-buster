@@ -1,6 +1,6 @@
 {
   "name": "docker-rust-buster",
-  "version": "1.68.1",
+  "version": "1.68.2",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sinlov/docker-rust-buster.git"

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.68.2](https://github.com/sinlov/docker-rust-buster/compare/v1.68.1...v1.68.2) (2023-05-30)
+
+
+### Features
+
+* update rust version to 1.68.2 ([065a2fb](https://github.com/sinlov/docker-rust-buster/commit/065a2fbd33c17f9adcafa9c44dba90e2faf4bd0f))
+
 ### [1.68.1](https://github.com/sinlov/docker-rust-buster/compare/v1.68.0...v1.68.1) (2023-05-30)
 
 
