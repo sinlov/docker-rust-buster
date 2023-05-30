@@ -21,6 +21,6 @@ RUN rustup component add rustfmt && \
   rustup component add rls && \
   rustup component add rust-analysis && \
   rustup component add rust-src && \
-  cargo install cargo-bak && \
+  cargo install cargo-bak --version 0.1.4 && \
   rm -rf ${CARGO_HOME}/registry && \
   rm -f ${CARGO_HOME}/.package-cache ${CARGO_HOME}/.crates2.json ${CARGO_HOME}/.crates.toml
