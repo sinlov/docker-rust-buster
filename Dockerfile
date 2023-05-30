@@ -11,6 +11,9 @@ FROM rust:1.68.1-buster
 
 #USER root
 ARG CARGO_HOME=/usr/local/cargo
+# set cargo config
+RUN mkdir -p ${CARGO_HOME}
+COPY ./z-MakefileUtils/cargo-config.toml ${CARGO_HOME}/config
 
 # add component
 RUN rustup component add rustfmt && \
