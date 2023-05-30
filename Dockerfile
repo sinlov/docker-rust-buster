@@ -17,6 +17,7 @@ ARG CARGO_HOME=/usr/local/cargo
 
 # add component
 RUN CARGO_NET_GIT_FETCH_WITH_CLI=true && \
+  CI=1 && \
   CARGO_TERM_PROGRESS_WHEN=never && \
   CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse && \
   rustup component add rustfmt && \

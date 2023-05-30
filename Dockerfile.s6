@@ -25,6 +25,8 @@ RUN export RUSTUP_UPDATE_ROOT=${RUSTUP_UPDATE_ROOT}
 
 # add component
 RUN CARGO_NET_GIT_FETCH_WITH_CLI=true && \
+  CI=1 && \
+  CARGO_TERM_PROGRESS_WHEN=never && \
   CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse && \
   rustup component add rustfmt && \
   rustup component add clippy && \
