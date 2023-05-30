@@ -19,6 +19,8 @@ ARG CARGO_HOME=/usr/local/cargo
 RUN CARGO_NET_GIT_FETCH_WITH_CLI=true && \
   CI=1 && \
   CARGO_TERM_PROGRESS_WHEN=never && \
+  CARGO_HTTP_DEBUG=true && \
+  CARGO_HTTP_MULTIPLEXING=false && \
   CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse && \
   rustup component add rustfmt && \
   rustup component add clippy && \
