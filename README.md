@@ -20,6 +20,10 @@
 - install tools
   - [cargo-bak](https://crates.io/crates/cargo-bak) above 1.68.1
 
+### waring
+
+- for issure [https://github.com/rust-lang/docker-rust/issues/72](https://github.com/rust-lang/docker-rust/issues/72) not support `linux/arm/v7` above `1.68.1`
+
 ## source repo
 
 [https://github.com/sinlov/docker-rust-buster](https://github.com/sinlov/docker-rust-buster)
