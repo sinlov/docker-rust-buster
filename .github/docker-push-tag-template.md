@@ -26,7 +26,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Build the Docker image
       run: |
         docker build . --file Dockerfile --tag $IMAGE_NAME
@@ -70,17 +70,22 @@ on:
     tags:
       - '*' # Push events to matching *, i.e. 1.0.0 v1.0, v20.15.10
 
+permissions:
+  contents: write
+  discussions: write
+
 env:
   # name of docker image
   DOCKER_HUB_USER: sinlov
-  IMAGE_BUILD_OS_NAME: alpine
+  IMAGE_BUILD_OS_NAME: buster
   IMAGE_NAME: docker-rust-buster
+  DOCKER_IMAGE_PLATFORMS: linux/amd64,linux/386,linux/arm64/v8,linux/arm/v7
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: "Login into registry as user: $DOCKER_HUB_USER"
       run: echo "${{ secrets.ACCESS_TOKEN }}" | docker login -u $DOCKER_HUB_USER --password-stdin
     - name: Docker buildx ready
@@ -110,6 +115,14 @@ jobs:
         echo IMAGE_ID=$IMAGE_ID
         echo VERSION=$VERSION
         # build and push
-        docker buildx build -t $IMAGE_ID:$VERSION --platform=linux/amd64,linux/386,linux/arm64/v8,linux/arm/v7 . --push
+        docker buildx build -t $IMAGE_ID:$VERSION --platform=$DOCKER_IMAGE_PLATFORMS . --push
+    - uses: softprops/action-gh-release@master # https://github.com/softprops/action-gh-release#-customizing
+      name: pre release
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        ## with permissions to create releases in the other repo
+        token: "${{ secrets.GITHUB_TOKEN }}"
+#        body_path: ${{ github.workspace }}-CHANGELOG.txt
+        prerelease: true
 
 ```

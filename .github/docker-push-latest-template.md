@@ -25,7 +25,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Build the Docker image
       run: |
         docker build . --file Dockerfile --tag $IMAGE_NAME
@@ -69,12 +69,13 @@ env:
   # name of docker image
   DOCKER_HUB_USER: sinlov
   IMAGE_NAME: docker-rust-buster
+  DOCKER_IMAGE_PLATFORMS: linux/amd64,linux/386,linux/arm64/v8,linux/arm/v7
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: "Login into registry as user: $DOCKER_HUB_USER"
       run: echo "${{ secrets.ACCESS_TOKEN }}" | docker login -u $DOCKER_HUB_USER --password-stdin
     - name: Docker buildx ready
@@ -98,7 +99,7 @@ jobs:
 
         echo IMAGE_ID=$IMAGE_ID
         echo VERSION=$VERSION
-        docker buildx build -t $IMAGE_ID:$VERSION --platform=linux/amd64,linux/386,linux/arm64/v8,linux/arm/v7 .
+        docker buildx build -t $IMAGE_ID:$VERSION --platform=$DOCKER_IMAGE_PLATFORMS .
     - name: Push image
       run: |
         # parse docker image id
@@ -115,6 +116,6 @@ jobs:
         echo IMAGE_ID=$IMAGE_ID
         echo VERSION=$VERSION
         # build
-        docker buildx build -t $IMAGE_ID:$VERSION --platform=linux/amd64,linux/386,linux/arm64/v8,linux/arm/v7 . --push
+        docker buildx build -t $IMAGE_ID:$VERSION --platform=$DOCKER_IMAGE_PLATFORMS . --push
 
 ```
