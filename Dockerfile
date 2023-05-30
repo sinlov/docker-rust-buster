@@ -17,11 +17,12 @@ ARG CARGO_HOME=/usr/local/cargo
 
 # add component
 RUN CARGO_NET_GIT_FETCH_WITH_CLI=true && \
+  CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse && \
   rustup component add rustfmt && \
   rustup component add clippy && \
   rustup component add rls && \
   rustup component add rust-analysis && \
   rustup component add rust-src && \
-  cargo install --version 0.1.4 cargo-bak && \
+  cargo install --all-features --version 0.1.4 cargo-bak && \
   rm -rf ${CARGO_HOME}/registry && \
   rm -f ${CARGO_HOME}/.package-cache ${CARGO_HOME}/.crates2.json ${CARGO_HOME}/.crates.toml
