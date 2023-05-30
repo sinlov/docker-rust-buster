@@ -14,14 +14,15 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
     strategy:
       matrix:
+        os: [ ubuntu-latest ]
         docker_image:
           - platform: linux/amd64
           - platform: linux/386
-          - platform: linux/arm64/v8
+          # - platform: linux/arm64/v8
           # - platform: linux/arm/v7
+    runs-on: ${{ matrix.os }}
     steps:
     - name: Checkout
       uses: actions/checkout@v3
