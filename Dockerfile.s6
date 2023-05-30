@@ -20,16 +20,18 @@ COPY ./z-MakefileUtils/proxy-rsproxy.toml ${CARGO_HOME}/config
 # ARG RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
 ARG RUSTUP_DIST_SERVER=https://rsproxy.cn
 ARG RUSTUP_UPDATE_ROOT=https://rsproxy.cn/rustup
-RUN export RUSTUP_DIST_SERVER=${RUSTUP_DIST_SERVER}
-RUN export RUSTUP_UPDATE_ROOT=${RUSTUP_UPDATE_ROOT}
+ENV RUSTUP_DIST_SERVER=${RUSTUP_DIST_SERVER}
+ENV RUSTUP_UPDATE_ROOT=${RUSTUP_UPDATE_ROOT}
+
+# add ci env
+ENV CARGO_HTTP_MULTIPLEXING=false
+ENV CARGO_TERM_PROGRESS_WHEN=never
+ENV CARGO_NET_GIT_FETCH_WITH_CLI=true
+ENV CI=1
 
 # add component
-RUN export CARGO_NET_GIT_FETCH_WITH_CLI=true && \
-  export CI=1 && \
-  export CARGO_TERM_PROGRESS_WHEN=never && \
-  export CARGO_HTTP_DEBUG=true && \
-  export CARGO_HTTP_MULTIPLEXING=false && \
-  export CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse && \
+RUN export CARGO_HTTP_DEBUG=true \
+  CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse && \
   rustup component add rustfmt && \
   rustup component add clippy && \
   rustup component add rls && \

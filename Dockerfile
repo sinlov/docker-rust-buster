@@ -10,18 +10,21 @@
 FROM rust:1.68.1-buster
 
 #USER root
-ARG CARGO_HOME=/usr/local/cargo
+
+# ARG CARGO_HOME=/usr/local/cargo
 # set cargo config
 # RUN mkdir -p ${CARGO_HOME}
 # COPY ./z-MakefileUtils/cargo-config.toml ${CARGO_HOME}/config
 
+# add ci env
+ENV CARGO_HTTP_MULTIPLEXING=false
+ENV CARGO_TERM_PROGRESS_WHEN=never
+ENV CARGO_NET_GIT_FETCH_WITH_CLI=true
+ENV CI=1
+
 # add component
-RUN export CARGO_NET_GIT_FETCH_WITH_CLI=true && \
-  export CI=1 && \
-  export CARGO_TERM_PROGRESS_WHEN=never && \
-  export CARGO_HTTP_DEBUG=true && \
-  export CARGO_HTTP_MULTIPLEXING=false && \
-  export CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse && \
+RUN export CARGO_HTTP_DEBUG=true \
+  CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse && \
   rustup component add rustfmt && \
   rustup component add clippy && \
   rustup component add rls && \
