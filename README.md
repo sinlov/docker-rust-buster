@@ -24,10 +24,6 @@
 
 - for issure [https://github.com/rust-lang/docker-rust/issues/72](https://github.com/rust-lang/docker-rust/issues/72) `linux/arm/v7` will has same problem.
 
-## source repo
-
-[https://github.com/sinlov/docker-rust-buster](https://github.com/sinlov/docker-rust-buster)
-
 ## fast use
 
 ```sh
@@ -37,3 +33,7 @@ docker run --rm \
   sinlov/docker-rust-buster:latest \
   rustc --version
 ```
+
+## source repo
+
+[https://github.com/sinlov/docker-rust-buster](https://github.com/sinlov/docker-rust-buster)

@@ -4,7 +4,134 @@
 - `DOCKERHUB_TOKEN` from [hub.docker](https://hub.docker.com/settings/security)
 - `IMAGE_BUILD_OS_NAME` like `alpine` and let `Dockerfile` under this folder
 
-## base template
+## buildx template
+
+```yml
+name: Docker Image buildx tag semver
+
+on:
+  push:
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0.0 v1.0, v20.15.10
+
+permissions:
+  contents: write
+  discussions: write
+
+env:
+  # name of docker image
+  DOCKER_HUB_USER: sinlov
+  IMAGE_NAME: docker-rust-buster
+  DOCKER_IMAGE_PLATFORMS: linux/amd64,linux/386,linux/arm64/v8,linux/arm/v7
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ ubuntu-latest ]
+        docker_image:
+          - platform: linux/amd64
+          - platform: linux/386
+          - platform: linux/arm64/v8
+          - platform: linux/arm/v7
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v3
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.DOCKER_HUB_USER }}/${{ env.IMAGE_NAME }}
+          tags: |
+            # type semver https://github.com/docker/metadata-action#typesemver
+            type=semver,pattern={{version}}
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      -
+        name: "Login into registry as user: env.DOCKER_HUB_USER"
+        uses: docker/login-action@v2
+        with:
+          username: ${{ env.DOCKER_HUB_USER }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      -
+        name: Build dry
+        uses: docker/build-push-action@v4 # https://github.com/docker/build-push-action
+        with:
+          context: .
+          file: Dockerfile
+          platforms: ${{ matrix.docker_image.platform }}
+          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.meta.outputs.tags }}
+          no-cache: false
+          pull: true
+          push: false
+
+  push:
+    runs-on: ubuntu-latest
+    needs:
+      - build
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v3
+      -
+        name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.DOCKER_HUB_USER }}/${{ env.IMAGE_NAME }}
+          tags: |
+            # type semver https://github.com/docker/metadata-action#typesemver
+            type=semver,pattern={{version}}
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      -
+        name: "Login into registry as user: env.DOCKER_HUB_USER"
+        uses: docker/login-action@v2
+        with:
+          username: ${{ env.DOCKER_HUB_USER }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      -
+        name: Build and push
+        id: docker_push
+        uses: docker/build-push-action@v4 # https://github.com/docker/build-push-action
+        with:
+          context: .
+          file: Dockerfile
+          platforms: ${{ env.DOCKER_IMAGE_PLATFORMS }}
+          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.meta.outputs.tags }}
+          no-cache: false
+          pull: true
+          push: true
+
+  release:
+    runs-on: ubuntu-latest
+    needs:
+      - push
+    steps:
+      - uses: softprops/action-gh-release@master # https://github.com/softprops/action-gh-release#-customizing
+        name: pre release
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          ## with permissions to create releases in the other repo
+          token: "${{ secrets.GITHUB_TOKEN }}"
+          # body_path: ${{ github.workspace }}-CHANGELOG.txt
+          prerelease: true
+
+```
+
+## base template by shell
 
 - just only support OS/ARCH `linux/amd64`
 
