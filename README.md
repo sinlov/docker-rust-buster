@@ -17,6 +17,8 @@
   - [rls](https://github.com/rust-lang/rls)
   - [rust-analysis](https://github.com/rust-lang/rust-analyzer)
   - [rust-src](https://github.com/rust-lang/rust)
+- install tools
+  - [cargo-bak](https://crates.io/crates/cargo-bak) above 1.68.1
 
 ## source repo
 
