@@ -22,7 +22,7 @@
 
 ### waring
 
-- for issure [https://github.com/rust-lang/docker-rust/issues/72](https://github.com/rust-lang/docker-rust/issues/72) not support `linux/arm/v7` above `1.68.1`
+- for issure [https://github.com/rust-lang/docker-rust/issues/72](https://github.com/rust-lang/docker-rust/issues/72) `linux/arm/v7` will has same problem.
 
 ## source repo
 
