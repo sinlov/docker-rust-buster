@@ -17,6 +17,8 @@ FROM rust:1.68.1-buster
 # COPY ./z-MakefileUtils/cargo-config.toml ${CARGO_HOME}/config
 
 # add ci env
+ENV CARGO_NET_RETRY=5
+ENV CARGO_HTTP_TIMEOUT=300
 ENV CARGO_HTTP_MULTIPLEXING=false
 ENV CARGO_TERM_PROGRESS_WHEN=never
 ENV CARGO_NET_GIT_FETCH_WITH_CLI=true
