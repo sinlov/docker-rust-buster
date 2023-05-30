@@ -12,15 +12,16 @@ FROM rust:1.68.1-buster
 #USER root
 ARG CARGO_HOME=/usr/local/cargo
 # set cargo config
-RUN mkdir -p ${CARGO_HOME}
-COPY ./z-MakefileUtils/cargo-config.toml ${CARGO_HOME}/config
+# RUN mkdir -p ${CARGO_HOME}
+# COPY ./z-MakefileUtils/cargo-config.toml ${CARGO_HOME}/config
 
 # add component
-RUN rustup component add rustfmt && \
+RUN CARGO_NET_GIT_FETCH_WITH_CLI=true && \
+  rustup component add rustfmt && \
   rustup component add clippy && \
   rustup component add rls && \
   rustup component add rust-analysis && \
   rustup component add rust-src && \
-  cargo install cargo-bak --version 0.1.4 && \
+  cargo install --all-features --version 0.1.4 cargo-bak && \
   rm -rf ${CARGO_HOME}/registry && \
   rm -f ${CARGO_HOME}/.package-cache ${CARGO_HOME}/.crates2.json ${CARGO_HOME}/.crates.toml
