@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.68.1](https://github.com/sinlov/docker-rust-buster/compare/v1.68.0...v1.68.1) (2023-05-30)
+
+
+### Features
+
+* let version cargo-bak to 0.1.4 ([ae0fd21](https://github.com/sinlov/docker-rust-buster/commit/ae0fd21445b7c7d4a264667361c969fac5586d70))
+* update to rust:1.68.1-buster and add cargo-bak tools ([70cd5e5](https://github.com/sinlov/docker-rust-buster/commit/70cd5e55a5ed094e3008d95b2a4195b9e8048e81))
+
+
+### Bug Fixes
+
+* try add cargo-config.toml to let git-fetch-with-cli open ([974dfd3](https://github.com/sinlov/docker-rust-buster/commit/974dfd3a4c72374f51affec252659572c3aa677b))
+
 ## [1.68.0](https://github.com/sinlov/docker-rust-buster/compare/v1.67.1...v1.68.0) (2023-03-15)
 
 
