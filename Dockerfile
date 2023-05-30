@@ -16,12 +16,12 @@ ARG CARGO_HOME=/usr/local/cargo
 # COPY ./z-MakefileUtils/cargo-config.toml ${CARGO_HOME}/config
 
 # add component
-RUN CARGO_NET_GIT_FETCH_WITH_CLI=true && \
-  CI=1 && \
-  CARGO_TERM_PROGRESS_WHEN=never && \
-  CARGO_HTTP_DEBUG=true && \
-  CARGO_HTTP_MULTIPLEXING=false && \
-  CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse && \
+RUN export CARGO_NET_GIT_FETCH_WITH_CLI=true && \
+  export CI=1 && \
+  export CARGO_TERM_PROGRESS_WHEN=never && \
+  export CARGO_HTTP_DEBUG=true && \
+  export CARGO_HTTP_MULTIPLEXING=false && \
+  export CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse && \
   rustup component add rustfmt && \
   rustup component add clippy && \
   rustup component add rls && \
