@@ -36,4 +36,7 @@ docker run --rm \
 
 ## source repo
 
+[![Docker Image buildx latest](https://github.com/sinlov/docker-rust-buster/actions/workflows/docker-image-latest.yml/badge.svg)](https://github.com/sinlov/docker-rust-buster/actions/workflows/docker-image-latest.yml)
+[![Docker Image buildx tag semver](https://github.com/sinlov/docker-rust-buster/actions/workflows/docker-image-tag.yml/badge.svg)](https://github.com/sinlov/docker-rust-buster/actions/workflows/docker-image-tag.yml)
+
 [https://github.com/sinlov/docker-rust-buster](https://github.com/sinlov/docker-rust-buster)
