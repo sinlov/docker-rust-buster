@@ -27,11 +27,17 @@
 ## fast use
 
 ```sh
+# check rustc --version
 docker run --rm \
-  --entrypoint poetry \
   --name "test-docker-rust-buster" \
   sinlov/docker-rust-buster:latest \
   rustc --version
+
+# run as cli
+docker run --rm \
+  -it \
+  --name "test-docker-rust-buster" \
+  sinlov/docker-rust-buster:latest
 ```
 
 ## source repo
