@@ -1,11 +1,25 @@
-
-[![docker version semver](https://img.shields.io/docker/v/sinlov/docker-rust-buster?sort=semver)](https://hub.docker.com/r/sinlov/docker-rust-buster)
-[![docker image size](https://img.shields.io/docker/image-size/sinlov/docker-rust-buster)](https://hub.docker.com/r/sinlov/docker-rust-buster)
-[![docker pulls](https://img.shields.io/docker/pulls/sinlov/docker-rust-buster)](https://hub.docker.com/r/sinlov/docker-rust-buster/tags?page=1&ordering=last_updated)
+[![docker hub version semver](https://img.shields.io/docker/v/sinlov/docker-rust-buster?sort=semver)](https://hub.docker.com/r/sinlov/docker-rust-buster/tags?page=1&ordering=last_updated)
+[![docker hub image size](https://img.shields.io/docker/image-size/sinlov/docker-rust-buster)](https://hub.docker.com/r/sinlov/docker-rust-buster)
+[![docker hub image size](https://img.shields.io/docker/pulls/sinlov/docker-rust-buster)](https://hub.docker.com/r/sinlov/docker-rust-buster/tags?page=1&ordering=last_updated)
+[![GitHub license](https://img.shields.io/github/license/sinlov/docker-rust-buster)](https://github.com/sinlov/docker-rust-buster)
+[![GitHub latest SemVer tag)](https://img.shields.io/github/v/tag/sinlov/docker-rust-buster)](https://github.com/sinlov/docker-rust-buster/tags)
+[![GitHub release)](https://img.shields.io/github/v/release/sinlov/docker-rust-buster)](https://github.com/sinlov/docker-rust-buster/releases)
 
 # docker-rust-buster
 
 - docker hub see https://hub.docker.com/r/sinlov/docker-rust-buster
+
+
+## Contributing
+
+[![Contributor Covenant](https://img.shields.io/badge/contributor%20covenant-v1.4-ff69b4.svg)](.github/CONTRIBUTING_DOC/CODE_OF_CONDUCT.md)
+[![GitHub contributors](https://img.shields.io/github/contributors/sinlov/docker-rust-buster)](https://github.com/sinlov/docker-rust-buster/graphs/contributors)
+
+We welcome community contributions to this project.
+
+Please read [Contributor Guide](.github/CONTRIBUTING_DOC/CONTRIBUTING.md) for more information on how to get started.
+
+请阅读有关 [贡献者指南](.github/CONTRIBUTING_DOC/zh-CN/CONTRIBUTING.md) 以获取更多如何入门的信息
 
 ## for
 
