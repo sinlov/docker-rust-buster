@@ -1,14 +1,17 @@
-[![docker hub version semver](https://img.shields.io/docker/v/sinlov/docker-rust-buster?sort=semver)](https://hub.docker.com/r/sinlov/docker-rust-buster/tags?page=1&ordering=last_updated)
-[![docker hub image size](https://img.shields.io/docker/image-size/sinlov/docker-rust-buster)](https://hub.docker.com/r/sinlov/docker-rust-buster)
-[![docker hub image size](https://img.shields.io/docker/pulls/sinlov/docker-rust-buster)](https://hub.docker.com/r/sinlov/docker-rust-buster/tags?page=1&ordering=last_updated)
+[![ci](https://github.com/sinlov/docker-rust-buster/actions/workflows/ci.yml/badge.svg)](https://github.com/sinlov/docker-rust-buster/actions/workflows/ci.yml)
+
 [![GitHub license](https://img.shields.io/github/license/sinlov/docker-rust-buster)](https://github.com/sinlov/docker-rust-buster)
 [![GitHub latest SemVer tag)](https://img.shields.io/github/v/tag/sinlov/docker-rust-buster)](https://github.com/sinlov/docker-rust-buster/tags)
 [![GitHub release)](https://img.shields.io/github/v/release/sinlov/docker-rust-buster)](https://github.com/sinlov/docker-rust-buster/releases)
 
 # docker-rust-buster
 
-- docker hub see https://hub.docker.com/r/sinlov/docker-rust-buster
+# source repo
 
+[![Docker Image buildx latest](https://github.com/sinlov/docker-rust-buster/actions/workflows/docker-image-latest.yml/badge.svg)](https://github.com/sinlov/docker-rust-buster/actions/workflows/docker-image-latest.yml)
+[![Docker Image buildx tag semver](https://github.com/sinlov/docker-rust-buster/actions/workflows/docker-image-tag.yml/badge.svg)](https://github.com/sinlov/docker-rust-buster/actions/workflows/docker-image-tag.yml)
+
+[https://github.com/sinlov/docker-rust-buster](https://github.com/sinlov/docker-rust-buster)
 
 ## Contributing
 
@@ -20,6 +23,14 @@ We welcome community contributions to this project.
 Please read [Contributor Guide](.github/CONTRIBUTING_DOC/CONTRIBUTING.md) for more information on how to get started.
 
 请阅读有关 [贡献者指南](.github/CONTRIBUTING_DOC/zh-CN/CONTRIBUTING.md) 以获取更多如何入门的信息
+
+# docker usage
+
+[![docker hub version semver](https://img.shields.io/docker/v/sinlov/docker-rust-buster?sort=semver)](https://hub.docker.com/r/sinlov/docker-rust-buster/tags?page=1&ordering=last_updated)
+[![docker hub image size](https://img.shields.io/docker/image-size/sinlov/docker-rust-buster)](https://hub.docker.com/r/sinlov/docker-rust-buster)
+[![docker hub image size](https://img.shields.io/docker/pulls/sinlov/docker-rust-buster)](https://hub.docker.com/r/sinlov/docker-rust-buster/tags?page=1&ordering=last_updated)
+
+- docker hub see https://hub.docker.com/r/sinlov/docker-rust-buster
 
 ## for
 
@@ -33,6 +44,7 @@ Please read [Contributor Guide](.github/CONTRIBUTING_DOC/CONTRIBUTING.md) for mo
   - [rust-src](https://github.com/rust-lang/rust)
 - install tools
   - [cargo-bak](https://crates.io/crates/cargo-bak) above 1.68.1
+    - `0.1.4` must use after `rust 1.74.0`
 
 ### waring
 
@@ -53,10 +65,3 @@ docker run --rm \
   --name "test-docker-rust-buster" \
   sinlov/docker-rust-buster:latest
 ```
-
-## source repo
-
-[![Docker Image buildx latest](https://github.com/sinlov/docker-rust-buster/actions/workflows/docker-image-latest.yml/badge.svg)](https://github.com/sinlov/docker-rust-buster/actions/workflows/docker-image-latest.yml)
-[![Docker Image buildx tag semver](https://github.com/sinlov/docker-rust-buster/actions/workflows/docker-image-tag.yml/badge.svg)](https://github.com/sinlov/docker-rust-buster/actions/workflows/docker-image-tag.yml)
-
-[https://github.com/sinlov/docker-rust-buster](https://github.com/sinlov/docker-rust-buster)
