@@ -44,7 +44,7 @@ Please read [Contributor Guide](.github/CONTRIBUTING_DOC/CONTRIBUTING.md) for mo
   - [rust-src](https://github.com/rust-lang/rust)
 - install tools
   - [cargo-bak](https://crates.io/crates/cargo-bak) above 1.68.1
-    - `0.1.4` must use after `rust 1.74.0`
+    - `cargo-bak 0.1.4` must use after `rust 1.74.0`
 
 ### waring
 
