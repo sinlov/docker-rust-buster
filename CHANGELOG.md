@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.77.0](https://github.com/sinlov/docker-rust-buster/compare/1.76.0...v1.77.0) (2024-03-22)
+
+### ✨ Features
+
+* rust version to 1.77.0 ([26fdb7bf](https://github.com/sinlov/docker-rust-buster/commit/26fdb7bf06384b814ebaecc2e2420cf85e0b2e3e))
+
 ## [1.76.0](https://github.com/sinlov/docker-rust-buster/compare/1.75.0...v1.76.0) (2024-03-22)
 
 ### ✨ Features
