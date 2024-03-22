@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [1.75.0](https://github.com/sinlov/docker-rust-buster/compare/1.74.1...v1.75.0) (2024-03-22)
+
+### ✨ Features
+
+* rust version to 1.75.0 and update 0.1.5 cargo-bak ([bc4fbce7](https://github.com/sinlov/docker-rust-buster/commit/bc4fbce7ab60f43a5dd2024a7068ddddeb2fac29))
+
+### 📝 Documentation
+
+* update info of install tools at README.md ([e798350e](https://github.com/sinlov/docker-rust-buster/commit/e798350e9829f8e5143dc77601bd83b66367b1b9))
+
 ## [1.74.1](https://github.com/sinlov/docker-rust-buster/compare/1.71.0...v1.74.1) (2024-03-22)
 
 ### ✨ Features
