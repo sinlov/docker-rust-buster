@@ -7,7 +7,7 @@
 # maintainer="https://github.com/sinlov/docker-rust-buster"
 
 # https://hub.docker.com/_/rust/tags?page=1&name=buster
-FROM rust:1.74.1-buster
+FROM rust:1.75.0-buster
 
 #USER root
 
@@ -32,6 +32,6 @@ RUN export CARGO_HTTP_DEBUG=true \
   rustup component add rls && \
   rustup component add rust-analysis && \
   rustup component add rust-src && \
-  cargo install --all-features --version 0.1.4 cargo-bak && \
+  cargo install --all-features --version 0.1.5 cargo-bak && \
   rm -rf ${CARGO_HOME}/registry && \
   rm -f ${CARGO_HOME}/.package-cache ${CARGO_HOME}/.crates2.json ${CARGO_HOME}/.crates.toml
