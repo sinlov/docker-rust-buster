@@ -69,7 +69,7 @@ docker run --rm \
 
 ## dev
 
-- change `1.77.0-buster`
+- change `1.77.1-buster`
   - new version by [![](https://img.shields.io/docker/v/_/rust/buster?label=rust&logo=rust)](https://hub.docker.com/_/rust/tags?page=1&name=buster) latest semver version with `buster`
 
 ```bash

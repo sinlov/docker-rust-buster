@@ -7,7 +7,7 @@
 # maintainer="https://github.com/sinlov/docker-rust-buster"
 
 # https://hub.docker.com/_/rust/tags?page=1&name=buster
-FROM rust:1.77.0-buster
+FROM rust:1.77.1-buster
 
 #USER root
 
