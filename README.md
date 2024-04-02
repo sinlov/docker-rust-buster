@@ -66,3 +66,17 @@ docker run --rm \
   --name "test-docker-rust-buster" \
   sinlov/docker-rust-buster:latest
 ```
+
+## dev
+
+- change `1.77.0-buster`
+  - new version by [![](https://img.shields.io/docker/v/_/rust/buster?label=rust&logo=rust)](https://hub.docker.com/_/rust/tags?page=1&name=buster) latest semver version with `buster`
+
+```bash
+# check build as local
+
+$ make dockerTestRestartLatest
+
+# prune test container and image
+$ make dockerTestPruneLatest
+```
